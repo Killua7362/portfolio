@@ -1,0 +1,66 @@
+
+.container{
+	height: 100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+  overflow:hidden;
+  position:relative;
+}
+
+.text{
+	font-family:"JetBrains Mono",monospace;
+	font-size:calc(20px + 3vw);
+	background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+.text_I{
+position:absolute;	
+top:25%;
+left:15%;
+}
+.text_AM{
+top:45%;	
+left:15%;
+position:absolute;	
+}
+.text_AKSHAY{
+position:absolute;	
+left:15%;
+top:65%;	
+}
+.container-1{
+	height: 100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+  	overflow:hidden;
+  	position:relative;
+}
+
+.sun{
+	height:10vh;	
+	width:10vh;	
+	background-color: black;
+	border-radius:50%;
+	position:absolute;
+	top:50px;
+	right:50px;
+}
+
+.moon{
+	height:10vh;	
+	width:10vh;	
+	background-color: white;
+	border-radius:50%;
+	position:absolute;
+	top:-100px;
+	right:50px;
+}
+
+:root {
+  --light: #fff;
+  --dark: #000;
+}
