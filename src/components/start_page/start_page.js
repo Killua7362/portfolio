@@ -6,13 +6,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 const StartPage = props => {
+
 	const sunRef = useRef();
-	const wrapRef= useRef();
+	const wrapRef = useRef();
 	const moonRef = useRef();
+
+	const text_I = useRef();
+	const[textI,settextI]=useState("I");
+
 	const containerRef = useRef();
 	const container1Ref = useRef();
 	const tl = new TimelineLite();
-	const sunPath= {
+	const sunPath = {
 		path: [
 			{ x: 0, y: 0 },
 			{ x: 0, y: 100 },
@@ -37,18 +42,19 @@ const StartPage = props => {
 			{ x: 0, y: 500 },
 		]
 	};
-
+	//componentmount alternative
 	useEffect(() => {
+		    document.title = "portfolio";
+
 		gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 		gsap.core.globals("MotionPathPlugin", MotionPathPlugin);
 		gsap.core.globals("ScrollTrigger", ScrollTrigger);
-		
-		gsap.fromTo(wrapRef.current,{backgroundColor:gsap.getProperty("html","--light")},
-	{
-	scrollTrigger:{
-	trigger:container1Ref.current,scrub:true,end:"bottom bottom"
-	},backgroundColor:gsap.getProperty("html","--dark")
-	}
+		gsap.fromTo(wrapRef.current, { backgroundColor: gsap.getProperty("html", "--light") },
+			{
+				scrollTrigger: {
+					trigger: container1Ref.current, scrub: true, end: "bottom bottom"
+				}, backgroundColor: gsap.getProperty("html", "--dark")
+			}
 		)
 
 		tl.to(sunRef.current, 1, {
@@ -58,19 +64,31 @@ const StartPage = props => {
 				end: "bottom center",
 				scrub: true,
 			},
-			motionPath: sunPath, ease: "none",				css:{
-				opacity:0
-				}
- }).to(moonRef.current, 1, {
+			motionPath: sunPath, ease: "none", css: {
+				opacity: 0
+			}
+		}).to(moonRef.current, 1, {
 			scrollTrigger: {
 				trigger: container1Ref.current,
 				start: "top center",
 				end: "bottom",
 				scrub: true
 			},
-			motionPath: moonPath, ease: "none" })
-	})
+			motionPath: moonPath, ease: "none"
+		})
 
+
+
+	},[])
+	const mouseEnterHandler =()=>{
+	settextI("About")
+	tl.staggerTo(text_I.current,1,{y:'100%',ease:"none"})
+	}
+	const mouseLeaveHandler =()=>{
+	settextI("I")
+			tl.staggerTo(text_I.current,1,{y:'-100%',ease:"none"})
+
+	}
 	return (
 		<div className="wrap" ref={wrapRef}>
 			<section ref={containerRef} className="container">
@@ -79,9 +97,12 @@ const StartPage = props => {
 			</section >
 			<section ref={container1Ref} className="container-1">
 				<div ref={moonRef} className="moon" />
-				<div className="text text_I">I</div>
-				<div className="text text_AM">AM</div>
-				<div className="text text_AKSHAY">AKSHAY BHAT</div>
+
+				<div className="text_container">
+					<div ref={text_I} onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler} className="text text_I">{textI}</div>
+					<div className="text text_AM">AM</div>
+					<div className="text text_AKSHAY">AKSHAY BHAT</div>
+				</div>
 
 			</section>
 		</div>
