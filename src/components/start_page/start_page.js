@@ -3,6 +3,7 @@ import './start_page.scss';
 import { gsap, TweenLite, Power1, TimelineLite } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrambleTextPlugin } from "gsap";
 
 
 const StartPage = props => {
@@ -12,7 +13,7 @@ const StartPage = props => {
 	const moonRef = useRef();
 
 	const text_I = useRef();
-	const[textI,settextI]=useState("I");
+	const [textI, settextI] = useState("I");
 
 	const containerRef = useRef();
 	const container1Ref = useRef();
@@ -44,7 +45,7 @@ const StartPage = props => {
 	};
 	//componentmount alternative
 	useEffect(() => {
-		    document.title = "portfolio";
+		document.title = "portfolio";
 
 		gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 		gsap.core.globals("MotionPathPlugin", MotionPathPlugin);
@@ -79,22 +80,23 @@ const StartPage = props => {
 
 
 
-	},[])
-	const mouseEnterHandler =()=>{
-	settextI("About")
-	tl.staggerTo(text_I.current,1,{y:'100%',ease:"none"})
-	}
-	const mouseLeaveHandler =()=>{
-	settextI("I")
-			tl.staggerTo(text_I.current,1,{y:'-100%',ease:"none"})
+	}, [])
 
+	const mouseEnterHandler = () => {
+		settextI("About")
+	}
+
+	const mouseLeaveHandler = () => {
+		settextI("I")
 	}
 	return (
 		<div className="wrap" ref={wrapRef}>
 			<section ref={containerRef} className="container">
-				<div className="text">NOT YOUR AVERAGE ENGINEER</div>
+				<div className="text text_NOT">NOT YOUR AVERAGE ENGINEER</div>
 				<div ref={sunRef} className="sun" />
 			</section >
+
+
 			<section ref={container1Ref} className="container-1">
 				<div ref={moonRef} className="moon" />
 
