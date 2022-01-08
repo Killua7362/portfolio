@@ -12,7 +12,7 @@ import {
 const history = createBrowserHistory();
 
 function App() {
-	return (<Router basename="/portfolio">
+	return (<Router>
 		<Routes>
 			<Route exact path="/portfolio" element={<StartPage />} />
 			<Route path="/portfolio/about" element={<About />} />
