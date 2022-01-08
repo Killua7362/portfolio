@@ -99,7 +99,7 @@ const StartPage = props => {
 				<div ref={moonRef} className="moon" />
 
 				<div className="text_container">
-					<Link to="/about" style={{ textDecoration: 'none' }} className="text text_I"></Link>
+					<Link to="/portfolio/about" style={{ textDecoration: 'none' }} className="text text_I"></Link>
 					<div className="text text_AM"></div>
 					<div className="text text_AKSHAY"></div>
 				</div>

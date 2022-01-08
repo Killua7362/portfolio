@@ -14,8 +14,8 @@ const history = createBrowserHistory();
 function App() {
 	return (<Router basename="/portfolio">
 		<Routes>
-			<Route exact path="/" element={<StartPage />} />
-			<Route path="/about" element={<About />} />
+			<Route exact path="/portfolio" element={<StartPage />} />
+			<Route path="/portfolio/about" element={<About />} />
 		</Routes>
 	</Router>
 	);
