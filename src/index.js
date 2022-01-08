@@ -5,4 +5,8 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 
-ReactDOM.render(<App className="background"/>,document.getElementById('root'));
+ReactDOM.render(
+			<App className="background" />
+	,
+	document.getElementById('root')
+);

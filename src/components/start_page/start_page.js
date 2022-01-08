@@ -4,14 +4,16 @@ import { gsap, TweenLite, Power1, TimelineLite } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrambleTextPlugin } from "gsap";
+import { useNavigate,Link } from "react-router-dom";
 
+import { createBrowserHistory } from 'history';
 
 const StartPage = props => {
-
+	let navigate = useNavigate();
+	const history = createBrowserHistory();
 	const sunRef = useRef();
 	const wrapRef = useRef();
 	const moonRef = useRef();
-
 	const text_I = useRef();
 	const [textI, settextI] = useState("I");
 
@@ -81,14 +83,10 @@ const StartPage = props => {
 
 
 	}, [])
-
-	const mouseEnterHandler = () => {
-		settextI("About")
+	const onClickHandler = () => {
+	navigate("/about", { replace: true });
 	}
 
-	const mouseLeaveHandler = () => {
-		settextI("I")
-	}
 	return (
 		<div className="wrap" ref={wrapRef}>
 			<section ref={containerRef} className="container">
@@ -101,9 +99,9 @@ const StartPage = props => {
 				<div ref={moonRef} className="moon" />
 
 				<div className="text_container">
-					<div ref={text_I} onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler} className="text text_I">{textI}</div>
-					<div className="text text_AM">AM</div>
-					<div className="text text_AKSHAY">AKSHAY BHAT</div>
+					<Link to="/portfolio/about" style={{ textDecoration: 'none' }} className="text text_I"></Link>
+					<div className="text text_AM"></div>
+					<div className="text text_AKSHAY"></div>
 				</div>
 
 			</section>

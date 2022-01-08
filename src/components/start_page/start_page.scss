@@ -22,22 +22,26 @@
 
 .text_NOT{
 	position:absolute;
-	padding:30% 10% 10% 10%;;
+	padding:10% 10% 10% 10%;;
+	text-shadow: black 0.15vw 0.15vw;
 }
 
 .text_I{
 	position:relative;
  	top:0px;
+	text-shadow: white 2px 2px;
 }
 
 .text_AM{
 position:relative;
 top:50px;	
+	text-shadow: white 2px 2px;
 }
 
 .text_AKSHAY{
 	position:relative;
 	top:100px;	
+	text-shadow: white 2px 2px;
 }
 
 .container-1{
@@ -80,10 +84,26 @@ top:50px;
   --dark: #000;
 }
 
-// .text_I:hover span{
-// display:none;
-// }
-// .text_I:hover:before{
-// 	content:"hii";
-// }
+.text_I:after{
+content:'I';
+}
 
+.text_I:hover:after , .text_I:active:after{
+content:'About';
+}
+
+
+.text_AM:after{
+content:'AM';
+}
+
+.text_AM:hover:after , .text_AM:active:after{
+content:'Projects';
+}
+.text_AKSHAY:after{
+content:'Akshay Bhat';
+}
+
+.text_AKSHAY:hover:after , .text_AKSHAY:active:after{
+content:'Contact';
+}
