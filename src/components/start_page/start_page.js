@@ -4,13 +4,11 @@ import { gsap, TweenLite, Power1, TimelineLite } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrambleTextPlugin } from "gsap";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-import { createBrowserHistory } from 'history';
 
 const StartPage = props => {
 	let navigate = useNavigate();
-	const history = createBrowserHistory();
 	const sunRef = useRef();
 	const wrapRef = useRef();
 	const moonRef = useRef();
@@ -83,9 +81,6 @@ const StartPage = props => {
 
 
 	}, [])
-	const onClickHandler = () => {
-	navigate("/about", { replace: true });
-	}
 
 	return (
 		<div className="wrap" ref={wrapRef}>
