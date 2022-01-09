@@ -13,7 +13,7 @@ function App() {
 	return (
 		<Router>
 			<Routes>
-				<Route exact path="/" elemeNt={<StartPage />} />
+				<Route exact path="/" element={<StartPage />} />
 				<Route path="/about" element={<About />} />
 			</Routes>
 		</Router>
