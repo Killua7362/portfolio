@@ -45,9 +45,9 @@ function About() {
 						<a className="text_weeb" onClick={weeb_click_handler}>WEEB</a>
 					</div>
 					<div className="links">
-						<a className="fa fa-linkedin" href="https://www.linkedin.com/in/akshay-bhat-ba90301b4/" />
-						<a className="fa fa-github" href="https://github.com/Killua7362/" />
-						<a className="fa fa-envelope" onClick={() => {
+						<a className="fa fa-linkedin" title="linkedin" href="https://www.linkedin.com/in/akshay-bhat-ba90301b4/" />
+						<a className="fa fa-github" title="github" href="https://github.com/Killua7362/" />
+						<a className="fa fa-envelope" title="mail" onClick={() => {
 							if (window.confirm('Do you want to copy my email?')) {
 								navigator.clipboard.writeText("bhat7362@gmail.com")
 							}
