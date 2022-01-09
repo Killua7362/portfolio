@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './about.scss'
 
-
 function About() {
 	const [quote, setQuote] = useState();
 	const [name, setName] = useState();
@@ -21,7 +20,7 @@ function About() {
 		animeQuote()
 	}
 
-	const [visible, setVisible] = useState("visible");
+	const [visible, setVisible] = useState("collapse");
 	const weeb_click_handler = () => {
 		if (visible == "visible") {
 			setVisible("collapse")
@@ -31,7 +30,7 @@ function About() {
 	}
 
 	return (
-		<div onClick={onClickHandler} className="card-container" >
+		<div className="card-container" >
 			<div className="quoteContainer">
 				<div className="name-container">
 					<img src="" className="photo" />
@@ -45,6 +44,16 @@ function About() {
 						<a>Mechanical Engineer undergrad who loves Computer Science and I am a hardcore </a>
 						<a className="text_weeb" onClick={weeb_click_handler}>WEEB</a>
 					</div>
+					<div className="links">
+						<a className="fa fa-linkedin" href="https://www.linkedin.com/in/akshay-bhat-ba90301b4/" />
+						<a className="fa fa-github" href="https://github.com/Killua7362/" />
+						<a className="fa fa-envelope" onClick={() => {
+							if (window.confirm('Do you want to copy my email?')) {
+								navigator.clipboard.writeText("bhat7362@gmail.com")
+							}
+						}} />
+					</div>
+
 				</div>
 				<div className={`break ${visible}`} />
 				<div className={`misc-container ${visible}`} >

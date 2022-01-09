@@ -60,7 +60,7 @@ box-shadow: 0px 1px 3px rgba(100, 181, 246, 0.1);
 }
 .about{
 	padding:6% 8% 8% 8%;
-		font-size:calc(12px + 0.3vw);
+		font-size:calc(15px + 0.3vw);
 	font-family:"JetBrains Mono",monospace;
 
 }
@@ -98,8 +98,9 @@ box-shadow: 0px 1px 3px rgba(100, 181, 246, 0.1);
 	margin:20% 20% 0% 20%;
 }
 
-.text_weeb{
-	color:#c4001d;
+.text_weeb:hover{
+	text-shadow: 1px 1px 2px #c4001d;
+
 }
 
 .visible{
@@ -107,4 +108,22 @@ visibility: visible;
 }
 .collapse{
 	visibility: collapse;
+}
+.fa-linkedin{
+	margin:0% 0% 50% 150%;
+	    text-decoration: none;
+	    color:black;
+}
+.fa-github{
+	margin:0% 0% 50% 200%;
+	    text-decoration: none;
+	    color:black;
+}
+.fa-envelope{
+	margin:0% 0% 50% 200%;
+	text-decoration: none;
+}
+.links{
+	    white-space: nowrap;
+
 }
