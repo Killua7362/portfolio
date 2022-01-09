@@ -13,7 +13,6 @@ function App() {
 	return (
 		<Router>
 			<Routes>
-				<Route path='*' element={<a>hii</a>} />
 				<Route exact path="/" element={<StartPage />} />
 				<Route path="/about" element={<About />} />
 			</Routes>
