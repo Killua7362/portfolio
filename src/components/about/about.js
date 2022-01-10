@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 
 function About() {
-	const initialChar = "Urahara Kisuke";
-	const initialName = "Bleach";
-	const initialQuote = "I'll drive you into a corner and make you remember that attack.";
+	const initialChar = "Shinichi Kudo";
+	const initialName = "The Case Closed";
+	const initialQuote = "Truth always prevails.";
 	const [quote, setQuote] = useState(initialQuote);
 	const [name, setName] = useState(initialName);
 	const [char, setChar] = useState(initialChar);
@@ -58,8 +58,7 @@ function About() {
 				<div className={`about-container ${vvisible}`}>
 					<div className="about">
 						<a>I am a </a>
-						<a style={{ textDecoration: "line-through" }}>Computer Science </a>
-						<a>Mechanical Engineer undergrad who loves Computer Science and I am a hardcore </a>
+						<a>Mechanical Engineer undergrad who loves Computer Science and a hardcore </a>
 						<a className="text_weeb" >weeb</a>
 					</div>
 					<div className="links">
@@ -89,6 +88,8 @@ function About() {
 						</a>
 					</div>
 				</div>
+				<div className="break" />
+
 			</div>
 		</div>
 	);

@@ -95,8 +95,8 @@ const StartPage = props => {
 
 				<div className="text_container">
 					<Link to="/about" style={{ textDecoration: 'none' }} className="text text_I"></Link>
-					<div className="text text_AM"></div>
-					<div className="text text_AKSHAY"></div>
+					<Link to="/projects" style={{ textDecoration: 'none' }} className="text text_AM"></Link>
+					<Link to="/contact" style={{ textDecoration: 'none' }} className="text text_AKSHAY"></Link>
 				</div>
 
 			</section>

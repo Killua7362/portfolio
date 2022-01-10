@@ -1,0 +1,37 @@
+	$white: #0097bf;
+.project-container{
+	display:flex;
+	justify-content:center;
+	justify-items:center;
+	flex-wrap:wrap;
+}
+	.search-input {
+		position: absolute;
+		margin: 3% 0% 0% 0%;
+		height:50px;
+		width:50%;
+		-webkit-appearance: none;
+		font-size:18px;
+		border:0;
+		}
+		.search-input:focus {
+  outline: none;
+}
+
+.grid-container{
+	top:130px;
+	position:relative;
+display:flex;	  
+flex-wrap:wrap;
+height:100%;  
+width:80%;
+}
+
+.rect{
+	padding:10px;
+	top:50px;
+  width: 25vh;
+  height:25vh;
+  margin: 10px; /* (100-32*3)/2 */
+  background:black;
+}
