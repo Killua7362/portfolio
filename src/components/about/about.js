@@ -4,46 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 
 function About() {
-	const initialChar = "Shinichi Kudo";
-	const initialName = "The Case Closed";
-	const initialQuote = "Truth always prevails.";
-	const [quote, setQuote] = useState(initialQuote);
-	const [name, setName] = useState(initialName);
-	const [char, setChar] = useState(initialChar);
-	const animeQuote = () => {
-		fetch('https://animechan.vercel.app/api/random')
-			.then(response => response.json())
-			.then((quote) => {
-				setQuote(quote.quote)
-				setName(quote.anime)
-				setChar(quote.character)
-			}).catch(err => {
-				setQuote(initialQuote)
-				setName(initialName)
-				setChar(initialChar)
-				alert(err);
-			})
-	}
+
 
 	const [visible, setVisible] = useState("collapse");
 	const [vvisible, setVVisible] = useState("visible");
 	const [used, setUsed] = useState("used");
 
-	const weeb_click_handler = () => {
-		if (visible == "visible") {
-			setVisible("collapse")
-			setVVisible("visible")
-			setUsed("used")
-		} else {
-			setVisible("visible")
-			setVVisible("collapse")
-			setUsed("inuse")
-		}
-	}
 
-	const nextHandler = () => {
-		animeQuote()
-	}
 
 	return (
 		<div className="card-container" >
@@ -51,7 +18,7 @@ function About() {
 				<div className="name-container">
 					<div className="photo-container">
 						<img src="" className="photo" />
-						<img className={`pokeball ${used}`} onClick={weeb_click_handler} />
+						<img className={`pokeball ${used}`} />
 					</div>
 					<div className="name">Akshay Bhat</div>
 				</div>
@@ -72,13 +39,7 @@ function About() {
 					</div>
 
 				</div>
-				<div className={`quote-container ${visible}`}>
-					<div className="quote">
-						<div className="quote-quote">{quote}</div>
-						<div className="quote-anime-char">~{char}({name})</div>
-						<div className="quote-next" onClick={nextHandler}>next</div>
-					</div>
-
+				<div className={`quote-container ${visible}`}>		
 					<div className="links">
 						<a className="fa fa-instagram" title="instagram" href="https://www.instagram.com/___killuaa/" target="_blank" />
 						<a className="fa fa-mal" title="MyAnimeList" href="https://myanimelist.net/profile/Killua7362" target="_blank" >MAL</a>
